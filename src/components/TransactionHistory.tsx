@@ -311,7 +311,7 @@ export const TransactionHistory: React.FC<TransactionHistoryProps> = ({
             <Sparkles className="w-3 h-3 text-blue-400" />
             <span>Showing {filteredTransactions.length} of {transactions.length}  transactions</span>
           </div>
-          <span className="font-mono text-blue-400/70">PRANK MODE</span>
+          <span className="font-mono text-blue-400/70"></span>
         </div>
       </div>
     </div>
