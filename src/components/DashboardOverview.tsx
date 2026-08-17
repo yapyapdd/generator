@@ -37,7 +37,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         {/* Metric 1: Demo Balance */}
         <div className="bg-[#0f1523] border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400">Available Demo Balance</span>
+            <span className="text-xs font-semibold text-slate-400">Available Balance</span>
             <div className="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold text-xs border border-emerald-500/30">
               ₮
             </div>
@@ -48,7 +48,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             </div>
             <div className="flex items-center gap-1.5 text-xs text-emerald-400 mt-1 font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span>USDT Tether (Simulation)</span>
+              <span>USDT Tether </span>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         {/* Metric 2: Total Dispatched Volume */}
         <div className="bg-[#0f1523] border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400">Simulated Dispatched</span>
+            <span className="text-xs font-semibold text-slate-400"></span>
             <div className="w-7 h-7 rounded-lg bg-blue-500/15 text-blue-400 flex items-center justify-center border border-blue-500/30">
               <TrendingUp className="w-4 h-4" />
             </div>
@@ -66,7 +66,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               ${formatCurrency(totalSentVolume)}
             </div>
             <div className="flex items-center gap-1.5 text-xs text-slate-400 mt-1">
-              <span>{transactions.length} total demo broadcasts</span>
+              <span>{transactions.length} </span>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         {/* Metric 4: Security Layer */}
         <div className="bg-[#0f1523] border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400">Demo Guard</span>
+            <span className="text-xs font-semibold text-slate-400"></span>
             <div className="w-7 h-7 rounded-lg bg-purple-500/15 text-purple-400 flex items-center justify-center border border-purple-500/30">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -104,7 +104,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               <span>Isolated</span>
             </div>
             <div className="flex items-center gap-1 text-[11px] text-purple-300 mt-1">
-              <span>Zero real crypto risk</span>
+              <span></span>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
               <div className="flex items-center gap-2">
                 <Zap className="w-4 h-4 text-blue-400" />
-                <h3 className="text-sm font-bold text-white">Recent Demo Activity</h3>
+                <h3 className="text-sm font-bold text-white"></h3>
               </div>
               <button
                 type="button"
@@ -143,7 +143,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
             {recentTransactions.length === 0 ? (
               <div className="py-8 text-center text-xs text-slate-400">
-                No simulated activity yet.
+                
               </div>
             ) : (
               <div className="space-y-3">
@@ -193,7 +193,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                   1
                 </span>
                 <span>
-                  <strong className="text-slate-200">Multi-Protocol Testing:</strong> Simulate TRC-20, ERC-20, and BEP-20 payload structures.
+                  <strong className="text-slate-200">Multi-Protocol Testing:</strong> TRC-20, ERC-20, and BEP-20 payload structures.
                 </span>
               </div>
               <div className="flex items-start gap-2.5">
@@ -209,7 +209,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                   3
                 </span>
                 <span>
-                  <strong className="text-slate-200">Safe Sandbox:</strong> Strictly isolated demo environment without real crypto or wallet connections.
+                  <strong className="text-slate-200">Safe Sandbox:</strong>
                 </span>
               </div>
             </div>
