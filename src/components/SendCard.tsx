@@ -27,12 +27,12 @@ interface SendCardProps {
   balance: number;
   onSendDemoTx: (newTx: DemoTransaction) => void;
   onViewHistory: () => void;
-  onSelectTxDetails?: (tx: DemoTransaction) => void;
+  onSelectTxDetails?: (tx: Transaction) => void;
 }
 
 export const SendCard: React.FC<SendCardProps> = ({
   balance,
-  onSendDemoTx,
+  onSendTx,
   onViewHistory,
   onSelectTxDetails,
 }) => {
@@ -44,7 +44,7 @@ export const SendCard: React.FC<SendCardProps> = ({
   // Send status state machine: 'idle' | 'processing' | 'success'
   const [sendState, setSendState] = useState<'idle' | 'processing' | 'success'>('idle');
   const [processingStep, setProcessingStep] = useState<string>('');
-  const [completedTx, setCompletedTx] = useState<DemoTransaction | null>(null);
+  const [completedTx, setCompletedTx] = useState<Transaction | null>(null);
 
   // Copy states
   const [copiedTxId, setCopiedTxId] = useState(false);
@@ -54,8 +54,8 @@ export const SendCard: React.FC<SendCardProps> = ({
   const networks: { id: NetworkType; fee: string; speed: string; desc: string }[] = [
     { id: 'TRC-20 (Tron)', fee: '0.00 USDT (Simulated)', speed: '~1.5s', desc: 'Zero simulated fee' },
     { id: 'ERC-20 (Ethereum)', fee: '1.20 USDT (Simulated)', speed: '~3.0s', desc: 'Standard EVM Sim' },
-    { id: 'BEP-20 (BNB Smart Chain)', fee: '0.15 USDT (Simulated)', speed: '~2.0s', desc: 'Fast BSC Demo' },
-    { id: 'Polygon', fee: '0.05 USDT (Simulated)', speed: '~2.0s', desc: 'Low Gas Demo' },
+    { id: 'BEP-20 (BNB Smart Chain)', fee: '0.15 USDT (Simulated)', speed: '~2.0s', desc: 'Fast BSC ' },
+    { id: 'Polygon', fee: '0.05 USDT (Simulated)', speed: '~2.0s', desc: 'Low Gas ' },
   ];
 
   const handlePasteAddress = async () => {
@@ -125,7 +125,7 @@ export const SendCard: React.FC<SendCardProps> = ({
 
     // Progress updates over 2.8 seconds
     setTimeout(() => {
-      setProcessingStep('Broadcasting payload to demo mempool node...');
+      setProcessingStep('Broadcasting payload to mempool node...');
     }, 900);
 
     setTimeout(() => {
@@ -148,7 +148,7 @@ export const SendCard: React.FC<SendCardProps> = ({
         network,
         status: 'Successful',
         timestamp: timestampStr,
-        gasFee: selectedNet ? selectedNet.fee : '0.00 USDT (Demo)',
+        gasFee: selectedNet ? selectedNet.fee : '0.00 USDT ',
         blockNumber: Math.floor(62000000 + Math.random() * 900000),
         isDemo: true,
       };
@@ -188,7 +188,7 @@ export const SendCard: React.FC<SendCardProps> = ({
                 <Send className="w-4 h-4" />
               </div>
               <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                Send USDT Demo
+                Send USDT 
               </h2>
             </div>
             <p className="text-xs text-slate-400 mt-1">
@@ -210,7 +210,7 @@ export const SendCard: React.FC<SendCardProps> = ({
 
         {/* ================= SUCCESS STATE VIEW ================= */}
         {sendState === 'success' && completedTx ? (
-          <div id="demo-tx-success-view" className="space-y-6 animate-fadeIn">
+          <div id="-tx-success-view" className="space-y-6 animate-fadeIn">
             {/* Success Icon & Header */}
             <div className="text-center py-4 bg-emerald-950/20 rounded-2xl border border-emerald-500/30 p-6">
               <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3 border border-emerald-500/40 shadow-lg shadow-emerald-500/10">
@@ -226,7 +226,7 @@ export const SendCard: React.FC<SendCardProps> = ({
               {/* Prominent Demo/Simulation Label */}
               <div className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
                 <AlertTriangle className="w-3.5 h-3.5" />
-                <span>DEMO / SIMULATION — No real cryptocurrency transferred</span>
+                <span></span>
               </div>
             </div>
 
@@ -253,12 +253,12 @@ export const SendCard: React.FC<SendCardProps> = ({
                 <span className="text-xs text-slate-400 font-medium">Status</span>
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                   <Check className="w-3 h-3" />
-                  Successful (Demo)
+                  Successful 
                 </span>
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pt-1">
-                <span className="text-xs text-slate-400 font-medium">Demo Transaction ID</span>
+                <span className="text-xs text-slate-400 font-medium"> Transaction ID</span>
                 <div className="flex items-center gap-1.5">
                   <span className="font-mono text-[11px] text-blue-300 bg-blue-950/40 px-2 py-0.5 rounded border border-blue-800/50 truncate max-w-[200px]">
                     {completedTx.txId}
@@ -268,7 +268,7 @@ export const SendCard: React.FC<SendCardProps> = ({
                     id="copy-txid-success-btn"
                     onClick={() => handleCopyTxId(completedTx.txId)}
                     className="p-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
-                    title="Copy Demo Transaction ID"
+                    title="Copy  Transaction ID"
                   >
                     {copiedTxId ? (
                       <Check className="w-3.5 h-3.5 text-emerald-400" />
@@ -481,7 +481,7 @@ export const SendCard: React.FC<SendCardProps> = ({
                   {showSampleDropdown && (
                     <div className="absolute right-0 mt-1 w-72 bg-[#121826] border border-slate-700 rounded-xl shadow-2xl z-30 p-1.5 space-y-1">
                       <div className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-                        Select Demo Destination
+                        Select  Destination
                       </div>
                       {SAMPLE_ADDRESSES.map((s, idx) => (
                         <button
@@ -548,7 +548,7 @@ export const SendCard: React.FC<SendCardProps> = ({
               <div className="flex items-center justify-between">
                 <span>Simulated Network Fee</span>
                 <span className="text-emerald-400 font-semibold">
-                  {networks.find((n) => n.id === network)?.fee || '0.00 USDT (Demo)'}
+                  {networks.find((n) => n.id === network)?.fee || '0.00 USDT '}
                 </span>
               </div>
               <div className="flex items-center justify-between">
@@ -569,7 +569,7 @@ export const SendCard: React.FC<SendCardProps> = ({
                 className="w-full py-3.5 px-6 rounded-xl font-bold text-sm sm:text-base text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0f1523] transition-all shadow-lg shadow-blue-600/30 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
-                <span>Send USDT (Demo Simulation)</span>
+                <span>Send USDT </span>
               </button>
 
               {/* Processing Spinner & Status directly underneath the button */}
