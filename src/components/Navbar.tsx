@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     Flash USDT Sender
                   </span>
                   <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                    DEMO
+                    
                   </span>
                 </div>
                 <p className="text-[10px] text-slate-400 hidden sm:block">
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <div className="flex flex-col text-right">
-                <span className="text-[10px] text-slate-400 font-medium">Demo Balance</span>
+                <span className="text-[10px] text-slate-400 font-medium"> Balance</span>
                 <span className="font-mono font-bold text-white">
                   ${formatCurrency(balance)} <span className="text-emerald-400 text-[10px]">USDT</span>
                 </span>
