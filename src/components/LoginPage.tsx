@@ -59,7 +59,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
           </h1>
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mt-2 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-300 border border-blue-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            PRANK MODE
+            
           </div>
         </div>
 
