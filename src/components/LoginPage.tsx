@@ -71,7 +71,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
               <span>Operator Login</span>
             </div>
             <span className="text-[11px] font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
-              PRANK
+              
             </span>
           </div>
 
