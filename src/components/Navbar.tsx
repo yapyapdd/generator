@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </span>
                 </div>
                 <p className="text-[10px] text-slate-400 hidden sm:block">
-                  Simulated Crypto Dispatcher
+                   Crypto Dispatcher
                 </p>
               </div>
             </button>
@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div
               id="navbar-balance-pill"
               className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#141d2e] border border-slate-700/80 text-xs shadow-inner"
-              title="Simulated Demo Balance"
+              title=" Balance"
             >
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <div className="flex flex-col text-right">
@@ -157,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Mobile Balance Display */}
           <div className="flex items-center justify-between p-3 rounded-xl bg-[#141d2e] border border-slate-700">
             <div>
-              <p className="text-[11px] text-slate-400">Simulated Demo Balance</p>
+              <p className="text-[11px] text-slate-400"> Balance</p>
               <p className="font-mono font-bold text-white text-base">
                 ${formatCurrency(balance)} <span className="text-emerald-400 text-xs">USDT</span>
               </p>
@@ -211,8 +211,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="bg-gradient-to-r from-blue-950/60 via-slate-900/90 to-blue-950/60 border-t border-slate-800/50 py-1 px-4 text-center">
         <p className="text-[11px] text-slate-400 flex items-center justify-center gap-1.5">
           <Sparkles className="w-3 h-3 text-blue-400 shrink-0" />
-          <span className="font-semibold text-slate-300">DEMO SIMULATION ENVIRONMENT:</span>
-          <span>All transactions and balances shown are visual simulations only.</span>
+          <span className="font-semibold text-slate-300">ENVIRONMENT:</span>
+          <span></span>
         </p>
       </div>
     </header>
