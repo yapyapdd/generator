@@ -52,10 +52,10 @@ export const SendCard: React.FC<SendCardProps> = ({
   const [showSampleDropdown, setShowSampleDropdown] = useState(false);
 
   const networks: { id: NetworkType; fee: string; speed: string; desc: string }[] = [
-    { id: 'TRC-20 (Tron)', fee: '0.00 USDT (Simulated)', speed: '~1.5s', desc: 'Zero simulated fee' },
-    { id: 'ERC-20 (Ethereum)', fee: '1.20 USDT (Simulated)', speed: '~3.0s', desc: 'Standard EVM Sim' },
-    { id: 'BEP-20 (BNB Smart Chain)', fee: '0.15 USDT (Simulated)', speed: '~2.0s', desc: 'Fast BSC ' },
-    { id: 'Polygon', fee: '0.05 USDT (Simulated)', speed: '~2.0s', desc: 'Low Gas ' },
+    { id: 'TRC-20 (Tron)', fee: '0.00 USDT', speed: '~1.5s', desc: 'Zero fee' },
+    { id: 'ERC-20 (Ethereum)', fee: '1.20 USDT ', speed: '~3.0s', desc: 'Standard EVM Sim' },
+    { id: 'BEP-20 (BNB Smart Chain)', fee: '0.15 USDT ', speed: '~2.0s', desc: 'Fast BSC ' },
+    { id: 'Polygon', fee: '0.05 USDT ', speed: '~2.0s', desc: 'Low Gas ' },
   ];
 
   const handlePasteAddress = async () => {
@@ -105,7 +105,7 @@ export const SendCard: React.FC<SendCardProps> = ({
     }
 
     if (numAmount > balance) {
-      setValidationError(`Insufficient simulated balance. You have $${formatCurrency(balance)} USDT.`);
+      setValidationError(`Insufficient  balance. You have $${formatCurrency(balance)} USDT.`);
       return;
     }
 
@@ -121,7 +121,7 @@ export const SendCard: React.FC<SendCardProps> = ({
 
     // 2. Disable send button & start processing simulation
     setSendState('processing');
-    setProcessingStep('Packaging simulated transaction payload...');
+    setProcessingStep('Packaging  transaction payload...');
 
     // Progress updates over 2.8 seconds
     setTimeout(() => {
@@ -192,7 +192,7 @@ export const SendCard: React.FC<SendCardProps> = ({
               </h2>
             </div>
             <p className="text-xs text-slate-400 mt-1">
-              Simulate dispatching USDT instantly with zero risk on test parameters.
+               dispatching USDT instantly with zero risk on test parameters.
             </p>
           </div>
 
@@ -220,7 +220,7 @@ export const SendCard: React.FC<SendCardProps> = ({
                 Transaction Successful
               </h3>
               <p className="text-xs text-emerald-400 font-medium mt-1">
-                Simulated payload successfully processed & broadcasted
+                 payload successfully processed & broadcasted
               </p>
 
               {/* Prominent Demo/Simulation Label */}
@@ -233,7 +233,7 @@ export const SendCard: React.FC<SendCardProps> = ({
             {/* Transaction Summary Card */}
             <div className="bg-[#141c2c] rounded-xl p-5 border border-slate-700/80 space-y-3.5 font-sans">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                <span className="text-xs text-slate-400 font-medium">Simulated Amount</span>
+                <span className="text-xs text-slate-400 font-medium"> Amount</span>
                 <span className="font-mono text-base sm:text-lg font-extrabold text-emerald-400">
                   {formatCurrency(completedTx.amount)} <span className="text-xs text-white">USDT</span>
                 </span>
@@ -285,7 +285,7 @@ export const SendCard: React.FC<SendCardProps> = ({
               </div>
 
               <div className="flex items-center justify-between text-[11px] text-slate-400">
-                <span>Simulated Gas Fee</span>
+                <span> Gas Fee</span>
                 <span className="font-mono text-slate-300">{completedTx.gasFee}</span>
               </div>
 
@@ -546,7 +546,7 @@ export const SendCard: React.FC<SendCardProps> = ({
                 <span className="text-slate-200 font-semibold">{network}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span>Simulated Network Fee</span>
+                <span> Network Fee</span>
                 <span className="text-emerald-400 font-semibold">
                   {networks.find((n) => n.id === network)?.fee || '0.00 USDT '}
                 </span>
