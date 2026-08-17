@@ -56,7 +56,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-xl font-bold text-white tracking-tight">Demo Operator</h2>
+                <h2 className="text-xl font-bold text-white tracking-tight"> Operator</h2>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                   Active
                 </span>
@@ -83,12 +83,12 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <div className="p-4 rounded-xl bg-[#141b2b] border border-slate-800 space-y-1">
             <span className="text-xs text-slate-400 font-medium">Session Tier</span>
-            <p className="text-sm font-bold text-white">Full Demo Operator Sandbox</p>
+            <p className="text-sm font-bold text-white">Full  Operator Sandbox</p>
             <p className="text-[11px] text-slate-400">Unlimited testing broadcasts</p>
           </div>
 
           <div className="p-4 rounded-xl bg-[#141b2b] border border-slate-800 space-y-1">
-            <span className="text-xs text-slate-400 font-medium">Current Demo Balance</span>
+            <span className="text-xs text-slate-400 font-medium">Current  Balance</span>
             <p className="text-sm font-bold font-mono text-emerald-400">
               ${formatCurrency(balance)} <span className="text-xs text-slate-300">USDT</span>
             </p>
@@ -144,7 +144,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
             <div>
               <p className="text-xs font-semibold text-slate-200">Refill Sandbox Balance</p>
               <p className="text-[11px] text-slate-400 mt-0.5">
-                Reset your test wallet back to the default $50,000.00 USDT demo fund.
+                Reset your test wallet back to the default $50,000.00 USDT fund.
               </p>
             </div>
             <button
@@ -168,7 +168,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           </div>
         </div>
 
-        <div className="mt-6 text-center text-[10px] font-semibold tracking-[0.18em] text-blue-400/70">PRANK MODE</div>
+        <div className="mt-6 text-center text-[10px] font-semibold tracking-[0.18em] text-blue-400/70"> MODE</div>
       </div>
     </div>
   );
