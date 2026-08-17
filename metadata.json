@@ -1,0 +1,6 @@
+{
+  "name": "Flash USDT Sender",
+  "description": "A modern, professional dark-themed crypto UI simulation demo for Flash USDT Sender with demo transaction broadcasting and history tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
